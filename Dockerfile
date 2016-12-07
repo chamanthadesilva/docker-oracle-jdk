@@ -3,9 +3,17 @@
 FROM ubuntu:16.04
 MAINTAINER chamantha de silva
 
+# Update the OS
+RUN  apt-get update
+
 # Install wget
-RUN apt-get update && \
-    apt-get install -y wget
+RUN apt-get install -y wget
+
+# Install zip
+RUN apt-get install -y zip
+
+# Install vim, NOTE: This is only for debugging purposes
+RUN apt-get install -y vim
 
 # Install Oracle JDK 8u112
 RUN cd /opt && \
